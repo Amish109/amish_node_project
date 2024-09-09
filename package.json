@@ -1,0 +1,14 @@
+{
+  "name": "amish_node_project",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Amish",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "express": "4.19.2"
+  }
+}

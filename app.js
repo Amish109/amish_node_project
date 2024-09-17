@@ -6,7 +6,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 // app.use(express.json());
 
-require("./router")(app);
+require(__dirname+"/router")(app);
 
 
 // // Getting Hwllo world on http://localhost:9998

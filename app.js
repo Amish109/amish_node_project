@@ -9,7 +9,6 @@ app.use(bodyParser.json())
 require("./router")(app);
 
 
-
 // // Getting Hwllo world on http://localhost:9998
 // app.get("/",function(req,res) {
 //     res.send("Hello world!");

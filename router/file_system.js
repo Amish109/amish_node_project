@@ -1,6 +1,8 @@
 module.exports=function(app){
     console.log("Directory Name",__dirname);//Directory Name C:\Users\akank\OneDrive\Desktop\Amish Folders\github-project\amish_node_project\router  +../src will go one directory up and go to src
     console.log("Directory Name",__filename);//File Name C:\Users\akank\OneDrive\Desktop\Amish Folders\github-project\amish_node_project\router\file_system.js
+    // console.log("Directory Name1",__dirname+"/../src/file_system");
+    // console.log("Directory Name2",__dirname+"/../../");
   // =================================== ASync ================================================
 
     app.post("/api/v1/file_system/async_fs/write_file_async",(req,res)=>{
@@ -61,6 +63,9 @@ module.exports=function(app){
 
     // ========================================= Async_syn =========================================
 
-
+    app.get("/api/v1/file_system/file_system_async_sync/file_write",(req,res)=>{
+        const write = require(__dirname+"/../src/file_system/file_system_async_sync/file_write");
+        write.main(req,res);
+    })
 
 }

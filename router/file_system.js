@@ -33,8 +33,7 @@ module.exports=function(app){
         const file_exist = require(__dirname+"/../src/file_system/async_fs/file_exist_async");
         file_exist.main(req,res);
     })
-
-    // =================================== Sync ================================================
+      // =================================== Sync ================================================
     app.post("/api/v1/file_system/sync_fs/write_fille_sync",(req,res)=>{
         const wite_file_instance = require(__dirname+"/../src/file_system/sync_fs/write_fille_sync");
         wite_file_instance.main(req,res);
@@ -67,5 +66,26 @@ module.exports=function(app){
         const write = require(__dirname+"/../src/file_system/file_system_async_sync/file_write");
         write.main(req,res);
     })
+
+
+    //===== generate dynamuc files =================
+    app.post("/api/v1/file_system/dynamic_folder_file/generate_dynamic_files",function(req,res){
+        let generate_dynamic_files = require(__dirname+"/../src/file_system/dynamic_folder_file/generate_dynamic_files");
+        generate_dynamic_files.main(req,res);
+    })
+
+
+    //===== read folder =================
+    app.get("/api/v1/file_system/read_directory/get_file_names",function(req,res){
+        let get_file_names = require(__dirname+"/../src/file_system/read_directory/get_file_names");
+        get_file_names.main(req,res);
+    })
+    //===== read folder =================
+    app.get("/api/v1/file_system/read_directory/read_data_from_dir",function(req,res){
+        let read_data_from_dir = require(__dirname+"/../src/file_system/read_directory/read_data_from_dir");
+        read_data_from_dir.main(req,res);
+    })
+
+
 
 }

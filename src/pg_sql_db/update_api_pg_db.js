@@ -1,17 +1,22 @@
 async function main(req,res){
-    const pg = require("pg");
-    let {column_to_update,value}=req.query;
+    // const pg = require("pg");
+    let {column_to_update,table_name}=req.query;
+    let value = req.body;
     let {id} = req.params;
-    const { Client } = pg;
-    const client = new Client({
-    user: 'user_amish',
-    password: 'user_amish',
-    host: 'localhost',
-    port: 5432,
-    database: 'amish_db',
-    })
-    await client.connect();
-    await client.query(`UPDATE students set ${column_to_update}=$1 WHERE id=$2`, [value,id],async function(err,data){
+    console.log("column_to_update,value,table_name",column_to_update,value,table_name);
+    // const { Client } = pg;
+    // const client = new Client({
+    // user: 'user_amish',
+    // password: 'user_amish',
+    // host: 'localhost',
+    // port: 5432,
+    // database: 'amish_db',
+    // })
+    // await client.connect();
+    const {pgConnector} = require('../base/pg_connector');
+    console.log("pgConnector",pgConnector)
+    const client = await pgConnector();
+    await client.query(`UPDATE ${table_name} set ${column_to_update}=$1 WHERE id=$2`, [value,id],async function(err,data){
         if(err){
             console.log("Error",err);
             res.send(err);

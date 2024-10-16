@@ -1,16 +1,19 @@
 async function main(req,res){
-    const pg = require("pg");
+    // const pg = require("pg");
     let {id} = req.params;
     console.log("id",id)
-    const { Client } = pg;
-    const client = new Client({
-    user: 'user_amish',
-    password: 'user_amish',
-    host: 'localhost',
-    port: 5432,
-    database: 'amish_db',
-    })
-    await client.connect();
+    // const { Client } = pg;
+    // const client = new Client({
+    // user: 'user_amish',
+    // password: 'user_amish',
+    // host: 'localhost',
+    // port: 5432,
+    // database: 'amish_db',
+    // })
+    // await client.connect();
+    const {pgConnector} = require('../base/pg_connector');
+    console.log("pgConnector",pgConnector)
+    const client = await pgConnector();
     await client.query(`DELETE FROM students WHERE id=$1`, [id],async function(err,data){
         if(err){
             console.log("Error",err);

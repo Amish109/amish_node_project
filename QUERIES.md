@@ -19,3 +19,36 @@ test_foreign_key INT  REFERENCES public.department_table(id)
 
 
 Inserting a value in fk which does not exist in table returns error
+
+
+## SUB QUERIES
+-- SELECT COUNT(*) FROM(
+SELECT a.name, a.designation,a.salary ,b.department_name ,b.years FROM public.employee a JOIN public.department_table b ON a.department_id = b.id
+) data_1 GROUP BY data_1.department_name;
+
+-- WITH data_1 AS (
+    SELECT a.name, a.designation, a.salary, b.department_name, b.years 
+    FROM public.employee a 
+    JOIN public.department_table b ON a.department_id = b.id
+)
+SELECT data_1.department_name, COUNT(*) AS employee_count 
+FROM data_1 
+GROUP BY data_1.department_name;
+
+
+
+WITH test_data AS(
+    SELECT MIN(id) AS min_id FROM location_table
+)
+SELECT area , id FROM location_table WHERE id = (SELECT min_id FROM test_data)
+
+
+
+
+
+
+## JOINS
+SELECT a.name , b.department_name , c.area
+FROM
+public.employee a INNER JOIN public.department_table b ON a.department_id = b.id INNER JOIN public.location_table c
+ON b.location_id = c.id; 

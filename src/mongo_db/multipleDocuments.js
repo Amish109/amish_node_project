@@ -1,6 +1,6 @@
 // const { MongoClient } = require('mongodb');
-const { students_array_of_obj } = require('../../files/100_sample_students_no_id');
 const { mongodbConnector } = require('../base/mongo_db_connector');
+const { students_array_of_obj } = require('./Pipeline/100_sample_students_no_id');
 // const { getmongodbConnection } = require('../base/mongo_connector');
 // const fs = require('fs');
 function main (req,res){

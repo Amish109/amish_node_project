@@ -15,5 +15,10 @@ module.exports=function(app){
         const x = require(__dirname+"/../src/mongo_db/delete_api");
         x.main(req,res);
     })
-   
+
+    // =================================== Create Multiple Document ==========================
+   app.post("/api/v1/mongo_db/multipleDocuments",(req,res)=>{
+        const x = require(__dirname+"/../src/mongo_db/multipleDocuments");
+        x.main(req,res);
+    })
 }

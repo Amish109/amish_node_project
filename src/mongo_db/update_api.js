@@ -13,7 +13,7 @@ const main =async(req,res)=>{
             response
         });
     } else{
-        const response = await db.collection('collection1').updateOne(query, { $set: data });
+        const response = await db.collection('collection1').updateOne(query, { $set: data},{new:true,upsert:true});
         res.json({
             res:`Updated`,
             response

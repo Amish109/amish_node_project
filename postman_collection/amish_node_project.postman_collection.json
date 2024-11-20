@@ -1,0 +1,1250 @@
+{
+	"info": {
+		"_postman_id": "b0e3b60a-9f83-4c14-953b-0ce41285c64c",
+		"name": "amish_node_project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30818038"
+	},
+	"item": [
+		{
+			"name": "employee_sending_data_examplel",
+			"item": [
+				{
+					"name": "get_server_url",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9998/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9998",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "employee_params_data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9998/employee/2/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9998",
+							"path": [
+								"employee",
+								"2",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "employee_query_data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9998/employee_query?a=2&b=25",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9998",
+							"path": [
+								"employee_query"
+							],
+							"query": [
+								{
+									"key": "a",
+									"value": "2"
+								},
+								{
+									"key": "b",
+									"value": "25"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "employee_body_data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Amish\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9998/employee_body_data",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9998",
+							"path": [
+								"employee_body_data"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "employee_header_data",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Test",
+								"value": "TestData",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9998/employee_header_data",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9998",
+							"path": [
+								"employee_header_data"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "file_system",
+			"item": [
+				{
+					"name": "async_fs",
+					"item": [
+						{
+							"name": "write_fille_async",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n \"Name\":\"Amish\",\r\n \"UserName\":\"amish_tiwari\"   \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9998/api/v1/file_system/async_fs/write_file_async?file_name=Amish/file_under_directory.txt",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9998",
+									"path": [
+										"api",
+										"v1",
+										"file_system",
+										"async_fs",
+										"write_file_async"
+									],
+									"query": [
+										{
+											"key": "file_name",
+											"value": "Amish/file_under_directory.txt"
+										},
+										{
+											"key": "file_name",
+											"value": "Amish.txt",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "read_file_async",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9998/api/v1/file_system/async_fs/read_file_async?file_name=Amish_new.txt",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9998",
+									"path": [
+										"api",
+										"v1",
+										"file_system",
+										"async_fs",
+										"read_file_async"
+									],
+									"query": [
+										{
+											"key": "file_name",
+											"value": "Amish_new.txt"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "append_file_async",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"newData\":\"Test Append using fs\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9998/api/v1/file_system/async_fs/append_file_async?file_name=Amish.txt",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9998",
+									"path": [
+										"api",
+										"v1",
+										"file_system",
+										"async_fs",
+										"append_file_async"
+									],
+									"query": [
+										{
+											"key": "file_name",
+											"value": "Amish.txt"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "rename_file_async",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9998/api/v1/file_system/async_fs/rename_file_async?old_name=Amish.txt&new_name=Amish_new.txt",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9998",
+									"path": [
+										"api",
+										"v1",
+										"file_system",
+										"async_fs",
+										"rename_file_async"
+									],
+									"query": [
+										{
+											"key": "old_name",
+											"value": "Amish.txt"
+										},
+										{
+											"key": "new_name",
+											"value": "Amish_new.txt"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "make_directory_async",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9998/api/v1/file_system/async_fs/make_directory_async?directory_name=Amish",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9998",
+									"path": [
+										"api",
+										"v1",
+										"file_system",
+										"async_fs",
+										"make_directory_async"
+									],
+									"query": [
+										{
+											"key": "directory_name",
+											"value": "Amish"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "file_exist_async",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9998/api/v1/file_system/async_fs/file_exist_async?path_to_check=Amish_new.txt",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9998",
+									"path": [
+										"api",
+										"v1",
+										"file_system",
+										"async_fs",
+										"file_exist_async"
+									],
+									"query": [
+										{
+											"key": "path_to_check",
+											"value": "Amish.txt",
+											"disabled": true
+										},
+										{
+											"key": "path_to_check",
+											"value": "Amish_new.txt"
+										},
+										{
+											"key": "path_to_check",
+											"value": "Amish",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "sync_fs",
+					"item": [
+						{
+							"name": "write_fille_sync",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n \"Name\":\"Amish\",\r\n \"UserName\":\"amish_tiwari\"   \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9998/api/v1/file_system/sync_fs/write_fille_sync?file_name=Amish_sync.txt",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9998",
+									"path": [
+										"api",
+										"v1",
+										"file_system",
+										"sync_fs",
+										"write_fille_sync"
+									],
+									"query": [
+										{
+											"key": "file_name",
+											"value": "Amish_sync.txt"
+										},
+										{
+											"key": "file_name",
+											"value": "Amish.txt",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "read_file_sync",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9998/api/v1/file_system/sync_fs/read_file_sync?file_name=Amish_sync.txt",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9998",
+									"path": [
+										"api",
+										"v1",
+										"file_system",
+										"sync_fs",
+										"read_file_sync"
+									],
+									"query": [
+										{
+											"key": "file_name",
+											"value": "Amish_sync.txt"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "append_file_sync",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"newData\":\"Test Async Append using fs\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9998/api/v1/file_system/sync_fs/append_file_sync?file_name=Amish_sync.txt",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9998",
+									"path": [
+										"api",
+										"v1",
+										"file_system",
+										"sync_fs",
+										"append_file_sync"
+									],
+									"query": [
+										{
+											"key": "file_name",
+											"value": "Amish_sync.txt"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "rename_file_sync",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9998/api/v1/file_system/sync_fs/rename_file_sync?old_name=Amish_sync.txt&new_name=Amish_new_sync.txt",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9998",
+									"path": [
+										"api",
+										"v1",
+										"file_system",
+										"sync_fs",
+										"rename_file_sync"
+									],
+									"query": [
+										{
+											"key": "old_name",
+											"value": "Amish_sync.txt"
+										},
+										{
+											"key": "new_name",
+											"value": "Amish_new_sync.txt"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "make_directory_sync",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9998/api/v1/file_system/sync_fs/make_directory_sync?directory_name=Amish_sync",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9998",
+									"path": [
+										"api",
+										"v1",
+										"file_system",
+										"sync_fs",
+										"make_directory_sync"
+									],
+									"query": [
+										{
+											"key": "directory_name",
+											"value": "Amish_sync"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "file_exist_sync",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9998/api/v1/file_system/sync_fs/file_exist_sync?path_to_check=Amish_new_sync.txt",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9998",
+									"path": [
+										"api",
+										"v1",
+										"file_system",
+										"sync_fs",
+										"file_exist_sync"
+									],
+									"query": [
+										{
+											"key": "path_to_check",
+											"value": "Amish.txt",
+											"disabled": true
+										},
+										{
+											"key": "path_to_check",
+											"value": "Amish_new_sync.txt"
+										},
+										{
+											"key": "path_to_check",
+											"value": "Amish",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "file_system_async_sync",
+					"item": [
+						{
+							"name": "file_write",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Data\":\"Dummy Data for sync_async\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9998/api/v1/file_system/file_system_async_sync/file_write?file_name=Amish_async_sync.txt&async=true",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9998",
+									"path": [
+										"api",
+										"v1",
+										"file_system",
+										"file_system_async_sync",
+										"file_write"
+									],
+									"query": [
+										{
+											"key": "file_name",
+											"value": "Amish_async_sync.txt"
+										},
+										{
+											"key": "async",
+											"value": "true"
+										},
+										{
+											"key": "async",
+											"value": "false",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "dynamic_folder_file",
+					"item": [
+						{
+							"name": "generate_dynamic_files",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"dynamic_file\",\r\n    \"data\":\"test\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9998/api/v1/file_system/dynamic_folder_file/generate_dynamic_files?folder_name=folder_of_dynamic_files&file_name=dynamic_file&number_of_filles=500",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9998",
+									"path": [
+										"api",
+										"v1",
+										"file_system",
+										"dynamic_folder_file",
+										"generate_dynamic_files"
+									],
+									"query": [
+										{
+											"key": "folder_name",
+											"value": "folder_of_dynamic_files"
+										},
+										{
+											"key": "file_name",
+											"value": "dynamic_file"
+										},
+										{
+											"key": "number_of_filles",
+											"value": "500"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "read_directory",
+					"item": [
+						{
+							"name": "get_file_names",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9998/api/v1/file_system/read_directory/get_file_names?folder_name=folder_of_dynamic_files",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9998",
+									"path": [
+										"api",
+										"v1",
+										"file_system",
+										"read_directory",
+										"get_file_names"
+									],
+									"query": [
+										{
+											"key": "folder_name",
+											"value": "folder_of_dynamic_files"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "read_data_from_dir",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9998/api/v1/file_system/read_directory/read_data_from_dir?folder_name=folder_of_dynamic_files",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9998",
+									"path": [
+										"api",
+										"v1",
+										"file_system",
+										"read_directory",
+										"read_data_from_dir"
+									],
+									"query": [
+										{
+											"key": "folder_name",
+											"value": "folder_of_dynamic_files"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "flow_test_fs",
+			"item": [
+				{
+					"name": "read_multiple_async",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9998/api/v1/flow_test_fs/read_multiple_async",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9998",
+							"path": [
+								"api",
+								"v1",
+								"flow_test_fs",
+								"read_multiple_async"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "pg_sql_db",
+			"item": [
+				{
+					"name": "emp",
+					"item": [
+						{
+							"name": "get_emp_list",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9998/api/v1/pg_sql_db/emp/get_emp_list?location=mum",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9998",
+									"path": [
+										"api",
+										"v1",
+										"pg_sql_db",
+										"emp",
+										"get_emp_list"
+									],
+									"query": [
+										{
+											"key": "location",
+											"value": "mum"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get_employee_pagination",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9998/api/v1/pg_sql_db/emp/get_employee_pagination?page_number=1&page_length=5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9998",
+									"path": [
+										"api",
+										"v1",
+										"pg_sql_db",
+										"emp",
+										"get_employee_pagination"
+									],
+									"query": [
+										{
+											"key": "page_number",
+											"value": "1"
+										},
+										{
+											"key": "page_length",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "create_api_pg_db",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":5,\"rollno\":100,\"name\":\"Amyy_\",\"city\":\"Mumbai\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9998/api/v1/pg_sql_db/create_api_pg_db",
+							"host": [
+								"localhost"
+							],
+							"port": "9998",
+							"path": [
+								"api",
+								"v1",
+								"pg_sql_db",
+								"create_api_pg_db"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "read_api_pg_db",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9998/api/v1/pg_sql_db/read_api_pg_db",
+							"host": [
+								"localhost"
+							],
+							"port": "9998",
+							"path": [
+								"api",
+								"v1",
+								"pg_sql_db",
+								"read_api_pg_db"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_api_pg_db",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Amyy\",\r\n    \"array_data\":[2,3,4],\r\n    \"array_of_objects\":[{\"name\":\"Amyy\",\"array_of_data\":[2,3,4,5] ,\"array_of_obj\":[{\"x\":1},{\"y\":2} ,{\"z\":3}] }]\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9998/api/v1/pg_sql_db/update_api_pg_db/5?column_to_update=more_data&table_name=students",
+							"host": [
+								"localhost"
+							],
+							"port": "9998",
+							"path": [
+								"api",
+								"v1",
+								"pg_sql_db",
+								"update_api_pg_db",
+								"5"
+							],
+							"query": [
+								{
+									"key": "column_to_update",
+									"value": "name",
+									"disabled": true
+								},
+								{
+									"key": "value",
+									"value": "Amish-Tiwari",
+									"disabled": true
+								},
+								{
+									"key": "column_to_update",
+									"value": "more_data"
+								},
+								{
+									"key": "value",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "table_name",
+									"value": "students"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:9998/api/v1/pg_sql_db/delete_api_pg_db/1",
+							"host": [
+								"localhost"
+							],
+							"port": "9998",
+							"path": [
+								"api",
+								"v1",
+								"pg_sql_db",
+								"delete_api_pg_db",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "mongo_db",
+			"item": [
+				{
+					"name": "create_api",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"location\":\"Lowerparel\"\r\n    },\r\n    {\r\n        \"location\":\"Parel\"\r\n    },\r\n    {\r\n        \"location\":\"Matungs\"\r\n    },\r\n    {\r\n        \"location\":\"Parel\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9998/api/v1/mongo_db/create_api",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9998",
+							"path": [
+								"api",
+								"v1",
+								"mongo_db",
+								"create_api"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_api",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"location\":\"Lowerparel\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9998/api/v1/mongo_db/delete_api?delete_many=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9998",
+							"path": [
+								"api",
+								"v1",
+								"mongo_db",
+								"delete_api"
+							],
+							"query": [
+								{
+									"key": "delete_many",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"area\":\"worli\",\r\n    \"total_address\":{\r\n        \"city\":\"Mumbai\",\r\n        \"state\":\"Maharashtra\",\r\n        \"country\":\"India\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9998/api/v1/mongo_db/update_api?update_many=true&key=location&value=Lowerparel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9998",
+							"path": [
+								"api",
+								"v1",
+								"mongo_db",
+								"update_api"
+							],
+							"query": [
+								{
+									"key": "update_many",
+									"value": "true"
+								},
+								{
+									"key": "key",
+									"value": "location"
+								},
+								{
+									"key": "value",
+									"value": "Lowerparel"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "read_api",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"location\":\"Lowerparel\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9998/api/v1/mongo_db/read_api",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9998",
+							"path": [
+								"api",
+								"v1",
+								"mongo_db",
+								"read_api"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upsert_api",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"location\":\"Lowerparel\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9998/api/v1/mongo_db/upsert_api",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9998",
+							"path": [
+								"api",
+								"v1",
+								"mongo_db",
+								"upsert_api"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "multipleDocuments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9998/api/v1/mongo_db/multipleDocuments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9998",
+							"path": [
+								"api",
+								"v1",
+								"mongo_db",
+								"multipleDocuments"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "api_internal",
+			"item": [
+				{
+					"name": "call_other_api",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9998/api/v1/api_internal/call_other_api",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9998",
+							"path": [
+								"api",
+								"v1",
+								"api_internal",
+								"call_other_api"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "mail_sender",
+			"item": [
+				{
+					"name": "gmail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"from\": \"sender@server.com\",\r\n  \"to\": \"test@gmail.com\",\r\n  \"subject\": \"Heyy \",\r\n//   \"text\": \"Node Mailer Test\",\r\n  \"html\": \"<h1>Node Mailer Test</h1>\",\r\n  \"attachments\":[\r\n        {   // utf-8 string as an attachment\r\n            \"filename\": \"mishi.txt\",\r\n            \"content\": \"hello world <3\"\r\n        }\r\n  ]\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9998/gmail_sender/create/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9998",
+							"path": [
+								"gmail_sender",
+								"create",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

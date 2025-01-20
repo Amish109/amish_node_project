@@ -1,0 +1,4 @@
+sms_credentials:
+   - AUTHENTIC_KEY: ''
+     SENDER_ID: ''
+     SMS_API_HOST: ''

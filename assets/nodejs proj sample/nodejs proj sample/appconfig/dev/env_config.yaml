@@ -1,0 +1,109 @@
+# @Author: Manish Jain
+# Created on : 08-Nov-2021 01:30 PM
+# Reason : Application config.
+
+# API Service Application Name
+APP_NAME: "hayosha_crm"
+
+# App's base domain.
+# This is the base domain where the API is hosted. Its an array and can have multiple values if multiple domains are pointing to the service.
+APP_BASE_DOMAIN:
+    - "http://127.0.0.1:5521"
+
+APP_PORTAL_BASE_DOMAIN:
+    - "https://google.com"
+
+SSL_CERTIFICATE:
+    key_path: ""
+    cert_path: ""
+
+# AppKey
+APP_KEY:
+    - "TESTAUTHKEY"
+
+# JWT token decoding keys
+# These are respective app JWT Token keys for the AppKeys provided above in the same order as AppKey
+JWT_TOKEN_KEY:
+    - "secretkey"
+
+# # AES 256 Encryption and Decryption key for document no.
+AES_256_SECRET_KEY: "THISIS32BITSECRETKEYFORAES252EX0"
+
+# Enable Emails for OTP & login [1/0]
+ENABLE_EMAIL: 0
+
+# Enable / Disable SMS for OTP & login [1/0]
+ENABLE_SMS: 0
+
+# OTP Auth Secret
+OTP_SECRET:
+    - "secretkey"
+
+# Enable / Disable Error Emails [1/0]
+ENABLE_ERR_EMAILS: 0
+
+# Email alert address
+# [severity 0 || severity 0, 1, 2 || severity 0, 1, 2, 3, 4]
+ALERT_EMAILS:
+    -
+        - "user1@gmail.com" 
+    -
+        - "user1@gmail.com"
+    -
+        - "user1@gmail.com"
+        - "user2@gmail.com"
+        - "user3@gmail.com"
+
+CDN_ENDPOINT: "https://res.cloudinary.com/"
+CDN_CLOUD_NAME: "asdhfkjahfdkfmndsaf"
+CDN_API_KEY: "857368564833"
+CDN_API_SECRET: "BHKDSksafo-erXoJi4JWFGHNs"
+
+# |--------------------------------------------------------------|
+# |   Config below this can be left as is for all environments.  |
+# |--------------------------------------------------------------|
+
+# Request and Response configs
+ALLOWED_ORIGIN:
+    - "*"
+ALLOWED_HEADERS:
+    - "Content-Type"
+    - "X-Requested-With"
+    - "AppKey"
+    - "AccessToken"
+    - "RefreshToken"
+    - "authorization"
+ALLOWED_METHODS:
+    - "GET"
+    - "POST"
+    - "DELETE"
+    - "PUT"
+    - "PATCH"
+ALLOWED_IP:
+    - "*"
+
+# File signature creation Key.
+FILE_SIGNATURE_KEY: "ajshdfakfhkdjshfskjfhasdkjfhsdasdfkjhdakfs"
+
+# App Ports
+# NOTE: For APP_API_SERVICES_PORTS and APP_EVENTS_API_SERVICES_PORTS make necessary changes in HAProxy config or any other loadbalancer that you use.
+APP_PORTS:
+    # These are the ports where the main API service runs.
+    APP_API_SERVICES_PORTS:
+        - 5521
+        - 5522
+        - 5523
+        - 5524
+    # hese are the ports where the event tracking API service runs.
+    APP_EVENTS_API_SERVICES_PORTS:
+        - 9994
+    # This is an internal port where the aggregator controller runs.
+    AGG_CONTROLLER_API_SERVICES_PORTS:
+        - 9009
+
+# # Leave blank for APP Default else provide complete path.
+# # e.g.: /Users/some_user/
+# EVENTS_LOG_DIRECTORY: ""
+
+# # Internal auth key, only used to exchange data between APIs. NOT FOR EXTERNAL USE.
+# INTERNAL_AUTH_KEY: "SzJiYEFkcUYoenVVRmxuUWBjK2pVREN+UU1Tbj8qRj93Sj82VH5QUyRHJz96Vkd7Ky9vaDhVWE81QDxMd2MtQnVlVUlsQzRySn5QI1c/Z0tWJTRLQk82WmxocVUvNXFZL2ttKDw3IUxXVDlDJHQ9UlJDRDtgdDJJP1FEKCciRE0="

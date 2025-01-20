@@ -1,0 +1,19 @@
+postgres_config:
+    -   host: ''
+        user: ''
+        password: ''
+        port: 5432
+        defaultSchema: ''
+        database: ''
+        max: 100
+        idleTimeoutMillis: 1000
+        ssl: false
+    -   host: ''
+        user: ''
+        password: ''
+        port: 5432
+        defaultSchema: ''
+        database: ''
+        max: 100
+        idleTimeoutMillis: 1000
+        ssl: false

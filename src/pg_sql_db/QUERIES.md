@@ -1,10 +1,14 @@
 ## SELECT more_data->'array_of_objects'->0->'name' name FROM public.students WHERE more_data->>'name' IS NOT NULL;
 
-## CREATE TABLE new_table(
-id SERIAL PRIMARY KEY,
-test_data VARCHAR(255),
-test_foreign_key INT  REFERENCES public.department_table(id)
-)
+## CREATE TABLE course (
+    course_id INT PRIMARY KEY,
+    course_name VARCHAR(255),
+    course_duration INT,
+    -- subject_id INT,?
+    subject_foreign_key INT,
+    FOREIGN KEY (subject_foreign_key) REFERENCES public.subject_table (id)
+);
+
 
 ## DROP TABLE new_table;
 ## ALTER TABLE public.employee ADD CONSTRAINT fk_department FOREIGN KEY (department_id) REFERENCES public.department_table(id);

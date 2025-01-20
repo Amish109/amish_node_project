@@ -1,0 +1,7 @@
+smtp_credentials:
+    -   SMTP_HOST: ''
+        SMTP_PORT: 587
+        SMTP_USERNAME: ''
+        SMTP_PASSWORD: ''
+        SMTP_SENDER_EMAIL: ''
+        SMTP_SENDER_ALIAS: ''

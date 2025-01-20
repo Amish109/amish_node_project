@@ -1,0 +1,11 @@
+mongo_config:
+    -   host: ''
+        port: ''
+        username: ''
+        password: ''
+        database: ''
+    -   host: ''
+        port: ''
+        username: ''
+        password: ''
+        database: ''

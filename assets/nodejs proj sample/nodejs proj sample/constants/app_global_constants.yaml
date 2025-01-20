@@ -1,0 +1,162 @@
+# @Author: Manish Jain
+# Created on : 10-Nov-2023 11:30 AM
+# Reason : Application constants.
+
+# Marital Status
+MARITAL_STATUS:
+    - "Single"
+    - "Married"
+    - "Divorced"
+    - "Widowed"
+    - "Other"
+
+# Gender
+GENDER:
+    - "Male"
+    - "Female"
+    - "Transgender"
+    - "Other"
+
+# Document Types
+DOCUMENT_TYPES:
+    - "Aadhaar Card"
+    - "PAN Card"
+
+# List of all States in India.
+INDIAN_STATES_LIST:
+    - "Andhra Pradesh"
+    - "Arunachal Pradesh"
+    - "Assam"
+    - "Bihar"
+    - "Chhattisgarh"
+    - "Goa"
+    - "Gujarat"
+    - "Haryana"
+    - "Himachal Pradesh"
+    - "Jharkhand"
+    - "Karnataka"
+    - "Kerala"
+    - "Maharashtra"
+    - "Madhya Pradesh"
+    - "Manipur"
+    - "Meghalaya"
+    - "Mizoram"
+    - "Nagaland"
+    - "Odisha"
+    - "Punjab"
+    - "Rajasthan"
+    - "Sikkim"
+    - "Tamil Nadu"
+    - "Tripura"
+    - "Telangana"
+    - "Uttar Pradesh"
+    - "Uttarakhand"
+    - "West Bengal"
+    - "Andaman & Nicobar (UT)"
+    - "Chandigarh (UT)"
+    - "Dadra & Nagar Haveli and Daman & Diu (UT)"
+    - "Delhi [National Capital Territory (NCT)]"
+    - "Jammu & Kashmir (UT)"
+    - "Ladakh (UT)"
+    - "Lakshadweep (UT)"
+    - "Puducherry (UT)"
+    - "Other"
+
+# Relationship Types
+RELATIONSHIP_TYPES:
+    - "Husband"
+    - "Wife"
+    - "Mother"
+    - "Father"
+    - "Son"
+    - "Daughter"
+    # - "Brother"
+    # - "Sister"
+    # - "Uncle"
+    # - "Aunt"
+    # - "Nephew"
+    # - "Niece"
+    # - "Grand Son"
+    # - "Grand Daughter"
+    # - "Step Son"
+    # - "Step Daughter"
+    # - "Partnership"
+    # - "HUF"
+    # - "Son-in-Law"
+    # - "Daughter-in-Law"
+    # - "Brother-in-Law"
+    # - "Sister-in-Law"
+    # - "Cousin"
+    # - "Other"
+
+OCCUPATION:
+    - "Business"
+    - "Self-Employed"
+    - "Service"
+    - "Government Employee"
+    - "Retired"
+    - "Education"
+    - "Others"
+
+# Line of Business
+LINE_OF_BUSINESS:
+    - "Health"
+    - "Liability"
+    - "Accidental"
+    - "Miscellaneous"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Dashboard graph API colors.
+DASHBOARD_GRAPH_COLORS:
+    - "#76BE65"
+    - "#38B6A0"
+    - "#56E7CE"
+    - "#00A6D9"
+    - "#5B64DD"
+    - "#9476C9"
+    - "#B060E2"
+    - "#F93850"
+    - "#F1736A"
+    - "#FFAEA9"
+    - "#FACC41"
+    - "#F79B42"
+    - "#7EBCE6"
+    - "#008DFF"
+
+# Dashboard app selection limit.
+DASHBOARD_APP_SELECTION_LIMIT: 10
+
+# Dashboard app wrap limit.
+DASHBOARD_APP_WRAP_LIMIT: 5
+
+
+# Allowed user access
+INSIGHTS_USER_ACCESS_ROLES:
+    - "superadmin"
+    - "partner_admin"
+    - "mg_admin"
+    - "app_admin"
+    - "owner"
+    - "creator"
+    - "user"
+
+# Allowed languages
+INSIGHTS_SUPPORTED_LANGUAGES:
+    - "en_US"
+    - "fr_CA"
+    - "fr_FR"
+    - "ko_KR"
+    - "ja_JP"
